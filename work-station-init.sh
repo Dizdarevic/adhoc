@@ -64,7 +64,7 @@ echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 yarn global add typescript
 
 # Git and Dotfiles
-git config --global user.name "Edvin Dizdarevic"
+git config --global user.name "Dizdarevic"
 git config --global user.email "dizdarevic1994@gmail.com"
 
 open /Applications/ShiftIt.app
