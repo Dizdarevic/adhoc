@@ -4,6 +4,11 @@
 
 # fix file permissions on half installed machines
 # sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
+
+# random nice things
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# mac setup
 xcode-select --install
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -60,11 +65,11 @@ go get github.com/golang/lint/golint
 pip3 install awscli awsebcli
 echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 
-# node packages
-yarn global add typescript
-
 # Git and Dotfiles
 git config --global user.name "Dizdarevic"
 git config --global user.email "dizdarevic1994@gmail.com"
+
+# node packages
+yarn global add typescript
 
 open /Applications/ShiftIt.app
