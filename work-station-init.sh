@@ -18,6 +18,7 @@ brew update
 
 # brew UI apps
 brew cask install \
+    brave-browser \
     discord \
     docker \
     firefox \
@@ -59,7 +60,6 @@ brew install \
     tree \
     vegeta \
     wget \
-    yarn \
     zsh
     
 # golang dev tools
@@ -73,8 +73,5 @@ echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 # Git and Dotfiles
 git config --global user.name "Dizdarevic"
 git config --global user.email "dizdarevic1994@gmail.com"
-
-# node packages
-yarn global add typescript
 
 open /Applications/ShiftIt.app
