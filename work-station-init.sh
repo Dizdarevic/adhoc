@@ -16,10 +16,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 brew tap caskroom/versions
 brew update
 
+# Copy zshrc into actual
+cp -f .zshrc ~/.zshrc
+source ~/.zshrc
+
 # brew UI apps
 brew cask install \
     brave-browser \
-    discord \
     docker \
     firefox \
     flux \
@@ -28,8 +31,10 @@ brew cask install \
     intellij-idea \
     iterm2 \
     java8 \
+    microsoft-teams \
     postman \
     shiftit \
+    slack \
     spotify \
     sublime-text
 
@@ -56,12 +61,11 @@ brew install \
     sbt \
     scala \
     the_silver_searcher \
-    thefuck \
     tree \
     vegeta \
     wget \
     zsh
-    
+
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc
 go get github.com/golang/lint/golint
@@ -75,3 +79,8 @@ git config --global user.name "Dizdarevic"
 git config --global user.email "dizdarevic1994@gmail.com"
 
 open /Applications/ShiftIt.app
+
+# set up workspaces in home directory
+mkdir ~/workspace
+mkdir -p ~/go/bin
+mkdir -p ~/go/src/github.com/Dizdarevic
