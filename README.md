@@ -1,3 +1,3 @@
-# dotfiles
+# ADHOC
 
-My config (extended from Wes Bos's)
+My config and setup files
