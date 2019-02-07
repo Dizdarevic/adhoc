@@ -18,23 +18,25 @@ brew update
 
 # brew UI apps
 brew cask install \
+    discord \
     docker \
-    iterm2 \
-    google-chrome \
     firefox \
+    flux \
+    google-chrome \
+    insomnia \
     intellij-idea \
+    iterm2 \
+    java8 \
+    postman \
     shiftit \
     spotify \
-    sublime-text \
-    flux \
-    postman \
-    insomnia \
-    java8
+    sublime-text
 
 # CLIs
 brew install \
     clojure \
     docker \
+    emacs \
     git \
     go \
     gradle \
@@ -42,9 +44,12 @@ brew install \
     jq \
     kafka \
     kubernetes-cli \
+    kubernetes-helm \
     leiningen \
     maven \
+    minikube \
     nginx \
+    openssl \
     postgresql \
     python \
     sbt \
@@ -52,10 +57,10 @@ brew install \
     the_silver_searcher \
     thefuck \
     tree \
-    emacs \
+    vegeta \
     wget \
     yarn \
-    zsh 
+    zsh
     
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc
