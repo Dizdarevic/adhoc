@@ -30,7 +30,7 @@ brew cask install \
     insomnia \
     intellij-idea \
     iterm2 \
-    java \
+    homebrew/cask-versions/java8 \
     microsoft-teams \
     minikube \
     postman \
