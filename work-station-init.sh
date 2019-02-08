@@ -36,7 +36,8 @@ brew cask install \
     shiftit \
     slack \
     spotify \
-    sublime-text
+    sublime-text \
+    visual-studio-code
 
 # CLIs
 brew install \
