@@ -30,8 +30,9 @@ brew cask install \
     insomnia \
     intellij-idea \
     iterm2 \
-    java8 \
+    java \
     microsoft-teams \
+    minikube \
     postman \
     shiftit \
     slack \
@@ -54,7 +55,6 @@ brew install \
     kubernetes-helm \
     leiningen \
     maven \
-    minikube \
     nginx \
     openssl \
     postgresql \
