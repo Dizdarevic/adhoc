@@ -13,7 +13,7 @@ xcode-select --install
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-brew tap caskroom/versions
+# brew tap caskroom/versions
 brew update
 
 # Copy zshrc into actual
@@ -24,8 +24,6 @@ source ~/.zshrc
 brew cask install \
     brave-browser \
     docker \
-    firefox \
-    flux \
     google-chrome \
     insomnia \
     intellij-idea \
