@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#!/usr/bin/bash
 
 # TODO chron job to update this brew cask leaves or whatever
 
