@@ -43,3 +43,4 @@ if [ -f "${WORKSPACE_DIR}/google-cloud-sdk/path.zsh.inc" ]; then . "${WORKSPACE_
 
 # The next line enables shell command completion for gcloud.
 if [ -f "${WORKSPACE_DIR}/google-cloud-sdk/completion.zsh.inc" ]; then . "${WORKSPACE_DIR}/google-cloud-sdk/completion.zsh.inc"; fi
+
