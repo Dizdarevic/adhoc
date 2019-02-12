@@ -66,10 +66,12 @@ brew install \
     zsh
 
 # golang dev tools
+# if ssl issues appear, you can use 'go get -insecure <package>' at own risk
 go get golang.org/x/tools/cmd/godoc
 go get github.com/golang/lint/golint
 
 # aws cli stuff via python
+# if ssl issues appear, you can use 'pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org <package>' at own risk
 pip3 install awscli awsebcli
 echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 
