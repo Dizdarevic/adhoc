@@ -54,6 +54,7 @@ brew install \
     leiningen \
     maven \
     nginx \
+    node \
     openssl \
     postgresql \
     python \
