@@ -66,6 +66,9 @@ brew install \
     wget \
     zsh
 
+# install serverless
+npm install serverless -g
+
 # golang dev tools
 # if ssl issues appear, you can use 'go get -insecure <package>' at own risk
 go get golang.org/x/tools/cmd/godoc
