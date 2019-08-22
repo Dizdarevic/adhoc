@@ -25,6 +25,7 @@ brew cask install \
     brave-browser \
     docker \
     google-chrome \
+    google-cloud-sdk \
     insomnia \
     intellij-idea \
     iterm2 \
