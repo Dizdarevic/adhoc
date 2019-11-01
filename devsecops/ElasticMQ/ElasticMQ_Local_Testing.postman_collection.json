@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "3ba122a1-e783-4210-ae56-8a929b00f2c1",
+		"name": "ElasticMQ Local Testing",
+		"description": "This is for testing AWS SQS locally with ElasticMQ.\n\nFirst run the following to pull the ElasticMQ Docker Image:\n```docker pull softwaremill/elasticmq```\n\nThen run the following to spin up ElasticMQ:\n```docker run -p 9324:9324 softwaremill/elasticmq:latest```\n\nAnd then use the requests in the collection as appropriate.\nAfter spinning up the ElasticMQ instance...\nrun the `Create test queue` call to spin up a standard queue in ElasticMQ\nthen run the `Push P2P Message to Queue` to push a proper P2P message to the queue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create test queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9324/?Action=CreateQueue&QueueName=accums_P2P_queue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9324",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "CreateQueue"
+						},
+						{
+							"key": "QueueName",
+							"value": "accums_P2P_queue"
+						}
+					]
+				},
+				"description": "Create a standard queue similar to our SQS queue that we use for P2P changes."
+			},
+			"response": []
+		},
+		{
+			"name": "Push Message With Attributes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9324/queue/accums_P2P_queue/?Action=SendMessage&MessageBody=[{\"oldPlan\":{\"hcIdNumber\":\"211T95051\",\"certificateNumber\":\"MI6074891\",\"memberCode\":\"20\",\"productTypeCode\":\"HMO\",\"memberEffectiveDate\":\"20180701\",\"memberEndDate\":\"20190101\",\"contractEffectiveDate\":\"20180101\",\"contractEndDate\":\"99991231\",\"caseNumber\":\"IN\",\"contractCode\":\"1G5V\",\"groupNumber\":\"1G5V00\",\"stateCode\":\"GA\",\"exchangeIndicator\":\"ON\",\"planType\":\"IN\",\"sourceCode\":\"HIX\",\"copayIncludedInOutOfPocket\":\"N\",\"deductibleIncludedInOutOfPocket\":\"Y\",\"deductibleSharedIndicator\":\"Y\",\"outOfPocketSharedIndicator\":\"Y\",\"rxComingledIndicator\":\"Y\",\"vsnComingledIndicator\":\"O\",\"dentalComingledIndicator\":\"Y\",\"litesCode\":false,\"contractTypeCode\":\"CY\",\"deductibleLastQuarterCarryOverIndicator\":\"Y\",\"outOfPocketLastQuarterCarryOverIndicator\":\"N\",\"eligibilitySource\":\"I\",\"essentialHealthBenefitTier\":\"0\",\"lifetimeIndicator\":\"N\",\"commonFamilyAccum2Indicator\":\"N\",\"commonFamilyAccum3Indicator\":\"N\",\"contractType\":\"H\",\"subsidyIndicator\":\"N\",\"parentContract\":\"\",\"accumStartDate\":\"20180101\",\"accumEndDate\":\"20181231\",\"dualUpdateIndicator\":\"N\",\"specialProductTier\":\"N\",\"quarterPlan\":false},\"newPlan\":{\"hcIdNumber\":\"211T95051\",\"certificateNumber\":\"MI6074891\",\"memberCode\":\"20\",\"productTypeCode\":\"HMO\",\"memberEffectiveDate\":\"20190101\",\"memberEndDate\":\"20190101\",\"contractEffectiveDate\":\"20180101\",\"contractEndDate\":\"99991231\",\"caseNumber\":\"IN\",\"contractCode\":\"1G5J\",\"groupNumber\":\"1G5J00\",\"stateCode\":\"GA\",\"exchangeIndicator\":\"ON\",\"planType\":\"IN\",\"sourceCode\":\"HIX\",\"copayIncludedInOutOfPocket\":\"N\",\"deductibleIncludedInOutOfPocket\":\"Y\",\"deductibleSharedIndicator\":\"Y\",\"outOfPocketSharedIndicator\":\"Y\",\"rxComingledIndicator\":\"Y\",\"vsnComingledIndicator\":\"Y\",\"dentalComingledIndicator\":\"Y\",\"litesCode\":false,\"contractTypeCode\":\"CY\",\"deductibleLastQuarterCarryOverIndicator\":\"Y\",\"outOfPocketLastQuarterCarryOverIndicator\":\"N\",\"eligibilitySource\":\"I\",\"essentialHealthBenefitTier\":\"0\",\"lifetimeIndicator\":\"N\",\"commonFamilyAccum2Indicator\":\"N\",\"commonFamilyAccum3Indicator\":\"N\",\"contractType\":\"H\",\"subsidyIndicator\":\"N\",\"parentContract\":\"\",\"accumStartDate\":\"20190101\",\"accumEndDate\":\"20191231\",\"dualUpdateIndicator\":\"N\",\"specialProductTier\":\"N\",\"quarterPlan\":false},\"currentStatus\":\"1\",\"calChoiceIndicator\":\"N\",\"deductibleApplyIndicator\":\"\",\"outOfPocketApplyIndicator\":\"\",\"gaContractIndicator\":\"N\",\"crossApplyIndicator\":\"N\",\"syncInfo\":{\"forwardSyncIndicator\":true,\"forwardSyncFromDate\":\"20181001\",\"forwardSyncTermDate\":\"20181231\",\"backwardSyncIndicator\":false,\"backwardSyncFromDate\":\"00010101\",\"backwardSyncTermDate\":\"00010101\"},\"queueCode\":\"GAI\",\"recordTypeCode\":\"P\",\"transactionStatus\":\"A\",\"systemCode\":\"P\",\"recordEntryDate\":\"20190816\",\"transactionCompletedDate\":\"00010101\",\"recordReversalDate\":\"00010101\",\"recordReapplyDate\":\"00010101\",\"originalUpdateDate\":\"20190816\",\"lastUpdateDate\":\"20190816\",\"lastUpdateUser\":\"N@C151BD\",\"passType\":\"R\",\"oldOutOfPocketCrossApplyIndicator\":\"N\",\"enhTypeIndicator\":\"\",\"recordType\":\"\",\"triggerTypeIndicator\":\"\",\"filler\":\"\\\\u0000\\\\u0000\\\\u0000\\\\u0000\\\\u0000\\\\u0000\\\\u00\"}]&MessageAttribute.1.Name=RetryCount&MessageAttribute.1.Value.StringValue=5&MessageAttribute.1.Value.DataType=Number&MessageAttribute.2.Name=MessageId&MessageAttribute.2.Value.StringValue=2019-09-23T19:19:33.082510Z&MessageAttribute.2.Value.DataType=String&MessageAttribute.3.Name=BatchId&MessageAttribute.3.Value.StringValue=testBatchId&MessageAttribute.3.Value.DataType=String",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9324",
+					"path": [
+						"queue",
+						"accums_P2P_queue",
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "SendMessage"
+						},
+						{
+							"key": "MessageBody",
+							"value": "[{\"oldPlan\":{\"hcIdNumber\":\"211T95051\",\"certificateNumber\":\"MI6074891\",\"memberCode\":\"20\",\"productTypeCode\":\"HMO\",\"memberEffectiveDate\":\"20180701\",\"memberEndDate\":\"20190101\",\"contractEffectiveDate\":\"20180101\",\"contractEndDate\":\"99991231\",\"caseNumber\":\"IN\",\"contractCode\":\"1G5V\",\"groupNumber\":\"1G5V00\",\"stateCode\":\"GA\",\"exchangeIndicator\":\"ON\",\"planType\":\"IN\",\"sourceCode\":\"HIX\",\"copayIncludedInOutOfPocket\":\"N\",\"deductibleIncludedInOutOfPocket\":\"Y\",\"deductibleSharedIndicator\":\"Y\",\"outOfPocketSharedIndicator\":\"Y\",\"rxComingledIndicator\":\"Y\",\"vsnComingledIndicator\":\"O\",\"dentalComingledIndicator\":\"Y\",\"litesCode\":false,\"contractTypeCode\":\"CY\",\"deductibleLastQuarterCarryOverIndicator\":\"Y\",\"outOfPocketLastQuarterCarryOverIndicator\":\"N\",\"eligibilitySource\":\"I\",\"essentialHealthBenefitTier\":\"0\",\"lifetimeIndicator\":\"N\",\"commonFamilyAccum2Indicator\":\"N\",\"commonFamilyAccum3Indicator\":\"N\",\"contractType\":\"H\",\"subsidyIndicator\":\"N\",\"parentContract\":\"\",\"accumStartDate\":\"20180101\",\"accumEndDate\":\"20181231\",\"dualUpdateIndicator\":\"N\",\"specialProductTier\":\"N\",\"quarterPlan\":false},\"newPlan\":{\"hcIdNumber\":\"211T95051\",\"certificateNumber\":\"MI6074891\",\"memberCode\":\"20\",\"productTypeCode\":\"HMO\",\"memberEffectiveDate\":\"20190101\",\"memberEndDate\":\"20190101\",\"contractEffectiveDate\":\"20180101\",\"contractEndDate\":\"99991231\",\"caseNumber\":\"IN\",\"contractCode\":\"1G5J\",\"groupNumber\":\"1G5J00\",\"stateCode\":\"GA\",\"exchangeIndicator\":\"ON\",\"planType\":\"IN\",\"sourceCode\":\"HIX\",\"copayIncludedInOutOfPocket\":\"N\",\"deductibleIncludedInOutOfPocket\":\"Y\",\"deductibleSharedIndicator\":\"Y\",\"outOfPocketSharedIndicator\":\"Y\",\"rxComingledIndicator\":\"Y\",\"vsnComingledIndicator\":\"Y\",\"dentalComingledIndicator\":\"Y\",\"litesCode\":false,\"contractTypeCode\":\"CY\",\"deductibleLastQuarterCarryOverIndicator\":\"Y\",\"outOfPocketLastQuarterCarryOverIndicator\":\"N\",\"eligibilitySource\":\"I\",\"essentialHealthBenefitTier\":\"0\",\"lifetimeIndicator\":\"N\",\"commonFamilyAccum2Indicator\":\"N\",\"commonFamilyAccum3Indicator\":\"N\",\"contractType\":\"H\",\"subsidyIndicator\":\"N\",\"parentContract\":\"\",\"accumStartDate\":\"20190101\",\"accumEndDate\":\"20191231\",\"dualUpdateIndicator\":\"N\",\"specialProductTier\":\"N\",\"quarterPlan\":false},\"currentStatus\":\"1\",\"calChoiceIndicator\":\"N\",\"deductibleApplyIndicator\":\"\",\"outOfPocketApplyIndicator\":\"\",\"gaContractIndicator\":\"N\",\"crossApplyIndicator\":\"N\",\"syncInfo\":{\"forwardSyncIndicator\":true,\"forwardSyncFromDate\":\"20181001\",\"forwardSyncTermDate\":\"20181231\",\"backwardSyncIndicator\":false,\"backwardSyncFromDate\":\"00010101\",\"backwardSyncTermDate\":\"00010101\"},\"queueCode\":\"GAI\",\"recordTypeCode\":\"P\",\"transactionStatus\":\"A\",\"systemCode\":\"P\",\"recordEntryDate\":\"20190816\",\"transactionCompletedDate\":\"00010101\",\"recordReversalDate\":\"00010101\",\"recordReapplyDate\":\"00010101\",\"originalUpdateDate\":\"20190816\",\"lastUpdateDate\":\"20190816\",\"lastUpdateUser\":\"N@C151BD\",\"passType\":\"R\",\"oldOutOfPocketCrossApplyIndicator\":\"N\",\"enhTypeIndicator\":\"\",\"recordType\":\"\",\"triggerTypeIndicator\":\"\",\"filler\":\"\\\\u0000\\\\u0000\\\\u0000\\\\u0000\\\\u0000\\\\u0000\\\\u00\"}]"
+						},
+						{
+							"key": "MessageAttribute.1.Name",
+							"value": "RetryCount"
+						},
+						{
+							"key": "MessageAttribute.1.Value.StringValue",
+							"value": "5"
+						},
+						{
+							"key": "MessageAttribute.1.Value.DataType",
+							"value": "Number"
+						},
+						{
+							"key": "MessageAttribute.2.Name",
+							"value": "MessageId"
+						},
+						{
+							"key": "MessageAttribute.2.Value.StringValue",
+							"value": "2019-09-23T19:19:33.082510Z"
+						},
+						{
+							"key": "MessageAttribute.2.Value.DataType",
+							"value": "String"
+						},
+						{
+							"key": "MessageAttribute.3.Name",
+							"value": "BatchId"
+						},
+						{
+							"key": "MessageAttribute.3.Value.StringValue",
+							"value": "testBatchId"
+						},
+						{
+							"key": "MessageAttribute.3.Value.DataType",
+							"value": "String"
+						}
+					]
+				},
+				"description": "Push properly P2P formatted message to Queue"
+			},
+			"response": []
+		},
+		{
+			"name": "Receive Messages from Queue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9324/queue/testQueue/?Action=ReceiveMessage&WaitTimeSeconds=10&MaxNumberOfMessages=5&VisibilityTimeout=15&AttributeName=All;",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9324",
+					"path": [
+						"queue",
+						"testQueue",
+						""
+					],
+					"query": [
+						{
+							"key": "Action",
+							"value": "ReceiveMessage"
+						},
+						{
+							"key": "WaitTimeSeconds",
+							"value": "10"
+						},
+						{
+							"key": "MaxNumberOfMessages",
+							"value": "5"
+						},
+						{
+							"key": "VisibilityTimeout",
+							"value": "15"
+						},
+						{
+							"key": "AttributeName",
+							"value": "All;"
+						}
+					]
+				},
+				"description": "This is to manually recieve messages from the queue. Mainly for testing that the queue is working and successfully received previously sent messages."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1001404a-3c71-45d2-b54d-fe2a37b2e738",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "16513d95-eca7-4c08-b2fe-5ff13e4e2463",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

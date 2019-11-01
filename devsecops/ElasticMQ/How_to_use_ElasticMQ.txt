@@ -1,0 +1,9 @@
+ElasticMQ
+This implementation of standard SQS queue that can be run locally
+
+Running and using local ElasticMQ queue instance:
+
+$ docker run -p 9324:9324 softwaremill/elasticmq:latest
+$ docker pull softwaremill/elasticmq 
+
+Use provided Postman collection for simple message send and message receiving
