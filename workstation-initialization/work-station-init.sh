@@ -13,7 +13,7 @@ xcode-select --install
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# brew tap caskroom/versions
+brew tap homebrew/cask-versions
 brew update
 
 # Copy zshrc into actual
@@ -29,7 +29,7 @@ brew cask install \
     insomnia \
     intellij-idea \
     iterm2 \
-    homebrew/cask-versions/java8 \
+    adoptopenjdk8 \
     microsoft-teams \
     minikube \
     postman \
