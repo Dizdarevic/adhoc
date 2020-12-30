@@ -81,7 +81,7 @@ pip3 install awscli awsebcli
 echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 
 # Git and Dotfiles
-git config --global user.name "Dizdarevic"
+git config --global user.name "Dizveloper"
 git config --global user.email "dizdarevic1994@gmail.com"
 
 open /Applications/ShiftIt.app
