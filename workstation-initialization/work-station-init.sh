@@ -21,7 +21,7 @@ cp -f .zshrc ~/.zshrc
 source ~/.zshrc
 
 # brew UI apps
-brew cask install \
+brew install --cask \
     brave-browser \
     docker \
     google-chrome \
@@ -29,7 +29,7 @@ brew cask install \
     insomnia \
     intellij-idea \
     iterm2 \
-    adoptopenjdk8 \
+    adoptopenjdk \
     microsoft-teams \
     minikube \
     postman \
@@ -41,31 +41,31 @@ brew cask install \
 
 # CLIs
 brew install \
-    clojure \
     docker \
-    emacs \
     git \
     go \
     gradle \
     htop \
     jq \
-    kafka \
     kubernetes-cli \
     kubernetes-helm \
-    leiningen \
     maven \
-    nginx \
     node \
     openssl \
     postgresql \
     python \
-    sbt \
-    scala \
     the_silver_searcher \
     tree \
     vegeta \
     wget \
     zsh
+
+
+# fun but not needed
+brew install \
+    clojure \
+    scala \
+    kotlin \
 
 # install serverless
 npm install serverless -g
