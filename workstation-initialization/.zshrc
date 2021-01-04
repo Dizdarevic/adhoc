@@ -1,25 +1,22 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/opt/X11/bin:/usr/local/Cellar/gradle/5.1.1/bin
+export PATH=${PATH}:${HOME}/.npm-global/bin:${HOME}/.npm-global/lib/node_modules:
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export WORKSPACE_DIR=$HOME/workspace
 
-# add node
-export PATH=${PATH}:${HOME}/.npm-global/bin:${HOME}/.npm-global/lib/node_modules:
+# node
 export NODE_PATH=${HOME}/.npm-global/lib/node_modules
 
-export ANDROID_HOME=/usr/local/share/android-sdk
+# java
 export JAVA_HOME=/Library/Java/Home
 
-# --- For Default Project ---
-#export GOPATH=$HOME/go
-# --- For GoPractice Project ---
+# golang
 export HOME=${HOME}
 export GOPATH=$HOME/go
 
-#To run vscode as root user because of EACCES issue with go extension
+# to run vscode as root user because of EACCES issue with go extension
 alias vscode="sudo code . --user-data-dir='.'"
-
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
@@ -32,6 +29,28 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  # ubuntu
+  python
+  pylint
+  pip
+  # oc
+  nvm
+  npx
+  npm
+  node
+  mvn
+  gradle
+  iterm2
+  helm
+  golang
+  gcloud
+  docker
+  aws
+  bazel
+  terraform
+  ruby
+  spring
+  vscode
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -66,7 +66,8 @@ brew install \
     k3d \
     awscli \
     ruby \
-    warrensbox/tap/tfswitch
+    warrensbox/tap/tfswitch \
+    bazel
 
 
 # fun but not needed
