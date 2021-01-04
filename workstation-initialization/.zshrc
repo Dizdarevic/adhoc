@@ -36,8 +36,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-eval $(thefuck --alias)
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "${WORKSPACE_DIR}/google-cloud-sdk/path.zsh.inc" ]; then . "${WORKSPACE_DIR}/google-cloud-sdk/path.zsh.inc"; fi
 

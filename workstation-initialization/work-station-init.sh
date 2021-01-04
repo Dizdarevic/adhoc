@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-# TODO chron job to update this brew cask leaves or whatever
-
-# fix file permissions on half installed machines
-# sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
+# set up workspaces in home directory
+mkdir ~/workspace
+mkdir -p ~/go/bin
+mkdir -p ~/go/src/github.com/Dizdarevic
 
 # random nice things
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -11,6 +11,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # mac setup
 xcode-select --install
 
+# Install homebrew and ohmyzsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew tap homebrew/cask-versions
@@ -87,16 +88,11 @@ npm install serverless -g
 go get golang.org/x/tools/cmd/godoc
 go get github.com/golang/lint/golint
 
-# Git and Dotfiles
+# Git
 git config --global user.name "Dizveloper"
 git config --global user.email "dizdarevic1994@gmail.com"
 
 open /Applications/ShiftIt.app
-
-# set up workspaces in home directory
-mkdir ~/workspace
-mkdir -p ~/go/bin
-mkdir -p ~/go/src/github.com/Dizdarevic
 
 
 # ---- POST INSTALLS SETUP ----
