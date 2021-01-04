@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+# fix file permissions on half installed machines
+# sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
+# OR disable the check
+# export ZSH_DISABLE_COMPFIX="true"
+
 # set up workspaces in home directory
 mkdir ~/workspace
 mkdir -p ~/go/bin
