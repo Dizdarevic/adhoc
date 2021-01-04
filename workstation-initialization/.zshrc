@@ -35,7 +35,6 @@ plugins=(
   pip
   # oc
   nvm
-  npx
   npm
   node
   mvn
