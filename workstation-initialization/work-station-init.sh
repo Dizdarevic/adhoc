@@ -37,7 +37,10 @@ brew install --cask \
     slack \
     spotify \
     sublime-text \
-    visual-studio-code
+    visual-studio-code \
+    typora \
+    discord \
+    flux
 
 # CLIs
 brew install \
@@ -58,7 +61,11 @@ brew install \
     tree \
     vegeta \
     wget \
-    zsh
+    zsh \
+    k3d \
+    awscli \
+    ruby \
+    warrensbox/tap/tfswitch
 
 
 # fun but not needed
@@ -66,6 +73,11 @@ brew install \
     clojure \
     scala \
     kotlin \
+    argocd
+
+# container/docker security tool
+brew untap goodwithtech/dockle
+brew install goodwithtech/r/dockle
 
 # install serverless
 npm install serverless -g
@@ -74,11 +86,6 @@ npm install serverless -g
 # if ssl issues appear, you can use 'go get -insecure <package>' at own risk
 go get golang.org/x/tools/cmd/godoc
 go get github.com/golang/lint/golint
-
-# aws cli stuff via python
-# if ssl issues appear, you can use 'pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org <package>' at own risk
-pip3 install awscli awsebcli
-echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 
 # Git and Dotfiles
 git config --global user.name "Dizveloper"
@@ -90,3 +97,9 @@ open /Applications/ShiftIt.app
 mkdir ~/workspace
 mkdir -p ~/go/bin
 mkdir -p ~/go/src/github.com/Dizdarevic
+
+
+# ---- POST INSTALLS SETUP ----
+# Install Logitech options
+# Sync VSCode settings
+# Set up calendars (personal/work)
