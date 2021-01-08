@@ -1,3 +1,9 @@
+alias tf=terraform
+alias k=kubectl
+export GOOGLE_APPLICATION_CREDENTIALS=""
+
+export ZSH_DISABLE_COMPFIX="true"
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/opt/X11/bin:/usr/local/Cellar/gradle/5.1.1/bin
 export PATH=${PATH}:${HOME}/.npm-global/bin:${HOME}/.npm-global/lib/node_modules:
 # Add Visual Studio Code (code)
@@ -35,6 +41,7 @@ plugins=(
   pip
   # oc
   nvm
+  # npx
   npm
   node
   mvn
